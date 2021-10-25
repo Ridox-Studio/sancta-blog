@@ -1,0 +1,48 @@
+
+        <span class="leftbtn-news">
+        </span>
+        <span class="rightbtn-news">
+        </span>
+
+
+         <?php
+            $sql = "SELECT * FROM news LIMIT 19;";
+            $result = mysqli_query($conn, $sql);
+
+            if (mysqli_num_rows($result) > 0) {
+              # code...
+              while ($row = $resultData = mysqli_fetch_assoc($result)){
+
+                $urlName;
+                $urlbreak = explode(' ', $row['Title']);
+                for ($i=0; $i < count($urlbreak); $i++) { 
+                    if ($i > 0) {
+                        # code...
+                    $urlName = $urlName."_".$urlbreak[$i];
+    
+                    }
+                    else {
+                    $urlName = $urlbreak[$i];
+    
+                    }
+                    # code...
+                }
+                
+
+                // to style each of the box
+                echo '<div class="news-boards">
+            <div class="news-image">
+              <img src="uploads/image/'.$row['Img1'].'" alt="">
+
+            </div>
+            <div class="news-headline"><a href="news/'.$urlName.'/'.$topNews['NewsId'].'">'.$topNews['Title'].'">
+              '.$row['Title'].'</a>
+            </div>
+          </div>';
+
+              }
+              
+            }
+
+            
+          ?>
