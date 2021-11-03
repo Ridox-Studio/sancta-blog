@@ -2,7 +2,7 @@
 
     /* COLORS */
     --first-color: #0D4600;
-    --first-color-overlay: #0d4601db;
+    --first-color-overlay: #0d46018a;
     --first-color-alt: #0A3301;
     --main-txt-color: #000; /*paragraph and heading color*/
     --xs-color: #797878; /*dates and small text*/
@@ -10,6 +10,7 @@
 
     /* FONT SIZE */
     --xl-fs: 1.8rem;
+    --xxl-fs: 3.2rem;
     --xs-fs: 0.6rem;
     --s-fs: 0.9rem;
     /* FONT WEIGHT */
@@ -316,7 +317,6 @@ header nav li {
 .categories{
     width: 100%;
     height:50vh;
-    border: 1px black solid;
 }
 
 .categories-items-wrapper{
@@ -345,6 +345,7 @@ header nav li {
 /* News Section */
 
 .news-section{
+    top:85px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -374,6 +375,7 @@ header nav li {
     margin-bottom: 65px;
     height: 102%;
     max-height: 260px;
+    min-height: 238px;
     flex-shrink: 0;
     border-radius: 37px;
     border: solid 1px #8B8585;
@@ -418,8 +420,10 @@ header nav li {
 
 .news-boards .news-image img {
     background-size: cover;
-    left: -20px;
-    right: -20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100%
 }
 
 .news-boards .news-headline{
@@ -437,7 +441,7 @@ header nav li {
     background: var(--main-white);
     height: 47%;
     box-sizing: border-box;
-    max-width: 309px;
+    max-width: 280px;
     bottom: 20px;
 }
 
@@ -449,6 +453,108 @@ header nav li {
     padding-right: 10px;
     font-weight: var(--xl-fw);
     text-transform: uppercase;
+}
+
+/* PDF PAGE */
+
+.form-wrapper{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+}
+
+
+form{
+    width: 80%; 
+    position: relative;
+}
+
+.search-icon{
+    right: 0;
+    top: 0;
+}
+
+.form-wrapper button{
+    /* display: none; */
+    height: 100%;
+    border: solid;
+    position: absolute;
+    top: 0;
+    background: none;
+    right: 9px;
+    width: 32px;
+    border: 0;
+    display: grid;
+    place-items: center;
+}
+
+.form-wrapper input{
+    width: 100%;
+    border-radius: 28px;
+    height: 41px;
+    outline: none;
+    padding: 20px;
+}
+
+.form-wrapper {
+    width: 100%;
+    border-bottom: 1px solid grey
+}
+
+.pdf-table{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.table_column{
+    border: solid var(--first-color-alt) 2px;
+    margin: 20px 0px;
+    border-radius: 26px;
+    padding: 10px;
+    display: flex;
+    background: var(--first-color-alt);
+    align-items: center;
+    justify-content: space-between;
+}
+
+.table_column a{
+    text-decoration: none;
+}
+.table-column-details-wrapper{
+    padding-left: 20px;
+    color: white;
+    text-align: center;
+}
+
+.table-column-download{
+    display: flex;
+    width: 61px;
+    height: 61px;
+    justify-content: center;
+    align-items: center;
+}
+
+.table-column-download a{
+}
+.pdf-icon{
+    width: 61px;
+    height: 61px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 0, 0, 0.911);
+}
+
+.pdf-icon::before{
+    content: 'PDF';
+    color: white;
+    font-weight: 500;
 }
 
 footer{

@@ -8,21 +8,21 @@
                         .cls-1, .cls-2 {
                             fill: #fff;
                         }
-
+                        
                         .cls-1 {
                             font-size: 18px;
                             font-family: SegoeUI-Bold, Segoe UI;
                             font-weight: 700;
                         }
-
+                        
                         .cls-2 {
                             font-size: 16px;
                             font-family: SegoeUI-Italic, Segoe UI;
                             font-style: italic;
                             font-weight:100;
                         }
-                        </style>
-                    </defs>
+                    </style>
+                </defs>
                     <g id="Group_7" data-name="Group 7" transform="translate(-19 -30)">
                         <text id="SANCTA_s" data-name="SANCTA&apos;s" class="cls-1" transform="translate(19 30)"><tspan x="0" y="24">SANCTA&apos;s</tspan></text>
                         <text id="blog" class="cls-2" transform="translate(84 45)"><tspan x="0" y="22">blog</tspan></text>
@@ -55,3 +55,6 @@
         </div>
     </div>
 </footer>
+</main>
+                    </body>
+                    </html>

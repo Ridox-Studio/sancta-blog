@@ -1,6 +1,6 @@
 <?php
 function Newsexist($conn, $newsId, $newsName){
-  $sql ="SELECT * FROM news WHERE NewsNo = ? AND Title = ?;";
+  $sql ="SELECT * FROM news WHERE NewsNo = ? AND Title LIKE ?;";
   $stmt = mysqli_stmt_init($conn);
   if (!mysqli_stmt_prepare($stmt, $sql)) {
     header("location:error.php?error=stmtfailed#formbox");

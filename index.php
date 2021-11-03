@@ -13,10 +13,12 @@
 
              $urlName;
             $urlbreak = explode(' ', $topNews['Title']);
-            for ($i=0; $i < count($urlbreak); $i++) { 
+            for ($i=0; $i < count($urlbreak); $i++) {
+
+              
                 if ($i > 0) {
                     # code...
-                $urlName = $urlName."_".$urlbreak[$i];
+                $urlName = $urlName."-".$urlbreak[$i];
 
                 }
                 else {
@@ -27,14 +29,16 @@
             }
 
              if ($topNews !== null) {
-               $date = date("Y-M-d", strtotime($topNews['dateup']));
+              $urlName = reg_change($urlName, '"' ,"'" );
+              
+               $date = date("d F Y", strtotime($topNews['dateup']));
                # code...
                echo '<article class="hot-article">
                <div class="img-wrapper">
                <div class="overlay-image-1"></div>
-              <img src="uploads/image/'.$topNews['Img1'].'" alt="" srcset="">
+              <img src="uploads/image/'.$topNews['Img1'].'" alt="'.$topNews['Title'].'" srcset="">
               <div class="article">
-              <a href="news/'.$urlName.'/'.$topNews['NewsId'].'">'.$topNews['Title'].'</a>
+              <a href="news/00'.$topNews['NewsNo'].'/'.$urlName.'">'.$topNews['Title'].'</a>
               <p href="news/'.$urlName.'/'.$topNews['NewsId'].'">'.$date.'</p>
               </div>
             </article>';
@@ -43,9 +47,11 @@
                echo '<article class="hot-article">
                <div class="img-wrapper" >
                <div class="overlay-image-1"></div>
-               <img src="img/3.png" alt="" srcset="">
+               <img src="img/3.png" alt="SANCTA`s BLOG" srcset="">
               <div class="article">
-                Welcome To MEME_WORLD
+              <a href="">WELCOME TO SANCTA BLOG</a>
+              <p href="">...
+              </p>
               </div>
             </article>';
              }
@@ -68,7 +74,7 @@
 
     <section class="categories-section" style="position: relative;">
       <div class="topic-header">
-        <p>categories</p>
+        <!-- <p>categories</p> -->
       </div>
       <div class="categories">
         <div class="categories-items-wrapper">
@@ -87,21 +93,6 @@
               <p>past <br> questions</p>
             </div>
           </a>
-          <a href="">
-            <div class="categories-item">
-              <p>freshers <br> whatsapp group</p>
-            </div>
-          </a>
-          <a href="">
-            <div class="categories-item">
-              <p>UNN <br> news</p>
-            </div>
-          </a>
-          <a href="">
-            <div class="categories-item">
-              <p>niilllll</p>
-            </div>
-          </a>
         </div>
       </div>
     </section>
@@ -111,60 +102,7 @@
       </div>
       <div class="section-title">
       </div>
-      <div class="section-body">
-
-        <div class="news-carousel">
-          
-         <?php
-            $sql = "SELECT * FROM news LIMIT 19;";
-            $result = mysqli_query($conn, $sql);
-
-            if (mysqli_num_rows($result) > 0) {
-              # code...
-              while ($row = $resultData = mysqli_fetch_assoc($result)){
-
-                $urlName = "";
-                $urlbreak = explode(' ', $row['Title']);
-                for ($i=0; $i < count($urlbreak); $i++) { 
-                    if ($i > 0) {
-                        # code...
-                    $urlName = $urlName."-".$urlbreak[$i];
-    
-                    }
-                    else {
-                    $urlName = $urlbreak[$i];
-    
-                    }
-                    # code...
-                }
-                
-
-                // to style each of the box
-                echo '<div class="news-boards">
-            <div class="news-image">
-               <div class="overlay-image-2"></div>
-              <img src="uploads/image/'.$row['Img1'].'" alt="">
-
-            </div>
-            <div class="news-headline">
-            <p href="news/00'.$row['NewsNo'].'/'.$urlName.'">'.$row['Description'].'</p>
-            <a href="news/00'.$row['NewsNo'].'/'.$urlName.'">
-              '.$row['Title'].'</a>
-            </div>
-            
-          </div>';
-
-              }
-              
-            }
-
-            
-          ?>
-        </div>
-      </div>
-    </section>
-    
-
+      
   </main>
     <!-- <script>
       var ctx = document.getElementById('myChart').getContext('2d');
@@ -204,6 +142,7 @@
       });
       </script> -->
       <?php
+        include_once "recent-posts.php";  
         include_once "footer.php";  
       ?>
 </body>

@@ -15,8 +15,10 @@
     }
     .hero-section .hot-topic .hot-article img {
         position: absolute;
-        right: -20px;
-        top: -20px;
+        /* right: -20px; */
+        width: 100%;
+        top: 0px;
+        object-fit: scale-down;
         z-index: -10;
     }
     .hero-section .top-week-song .song-list-cnt{
@@ -25,7 +27,8 @@
         max-width: 550px;
 
     }
-    .news-section .section-body .news-carousel{
+    .news-section{} 
+    .section-body .news-carousel{
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -62,8 +65,10 @@
         z-index: 0;
         position: absolute;
         top:0;
-        width: 100vw;
-        height: 100vh;
+        /* width: 100vw;
+        height: 100vh; */
+        min-width: 100%;
+        min-height: 100%;
         background-color: var(--first-color-overlay);
     }
 
@@ -112,4 +117,83 @@ nav ul{
     right: 14px;
     background: var(--main-white);
 }
+
+/* NEWS PAGE */
+
+.news-article{
+    display: grid;
+    place-items: center;
+}
+
+.news-article-image{
+    width: 100%;
+}
+
+.news-article-image img {
+    width: 100%;
+}
+
+.news-article-description{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.news-article-description-title{
+    padding: 20px 0 20px 0;
+    width: 100%;
+}
+
+
+.news-article-description-title p{
+    color: var(--xs-color);
+    font-size: var(--xs-fs);
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.news-article-description h1{
+    font-size: var(--xxl-fs);
+    overflow: hidden;
+    line-height: 57px;
+}
+.news-article-description{
+    width: 80%;
+}
+
+
+
+}
+
+@media (max-width: 360px) {
+    .categories{
+        height: 100%;
+    }
+}
+@media (max-width: 1024px) {
+    .categories-items-wrapper{
+        position:static;
+    }
+    .categories{
+        height: 100%;
+        padding: 20px;
+    }
+    .categories-items-wrapper{
+        display: flex;
+        flex-direction: column;
+    }
+    .categories-items-wrapper a{
+        width: 100%;
+    }
+    .categories-item{
+        width: 100%;
+    }
+}
+@media (max-width: 360px) {
+    
+}
+@media (max-width: 360px) {
+    
 }

@@ -30,3 +30,7 @@
         }, 3400);
       });
   </script>
+
+  <?php
+    include_once "footer.php";
+  ?>

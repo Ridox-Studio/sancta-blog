@@ -11,6 +11,10 @@
     require "getSimilarNews.inc.php";
     // to get pdf <details></details>
     require "pdf.inc.php";
+    // for regex pattern change
+    require "changepat.inc.php";
+    // for proper url writing
+    require "redirect.inc.php";
 
 
     function plusOne($conn){
