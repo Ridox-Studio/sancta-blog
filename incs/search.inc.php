@@ -1,28 +1,5 @@
 <?php
 
-
-  include_once "header.php"; 
-  ?> 
-<div class="search_query_load">
-
-
-   <?php
-  if (isset($_GET['sw'])) {
-      # code...
-      $searchword = $_GET['sw'];
-      $sql = "SELECT * FROM pdfs WHERE Falculty LIKE '%$searchword%' OR ;";
-  }
-  else {
-      $sql = "SELECT * FROM pdfs ;";
-
-  }
-
-            $result = mysqli_query($conn, $sql);?>
-
-            <div class="pdf-table">
-
-            <?php
-
             if (mysqli_num_rows($result) > 0) {
               # code...
               while ($row = $resultData = mysqli_fetch_assoc($result)){
@@ -55,10 +32,4 @@
             else {
                 echo '<div class="">No Pdf Here</div>';
             }
-?>
-</div>
-</div>
-            
-  <?php       
- include_once "footer.php";
 ?>
