@@ -10,66 +10,66 @@ function invalidUid($username){
     }
     return $result;
   }
-function uploadPdf($conn, $PdfName, $owner, $description, $Falculty, $file, $Tags){
+// function uploadPdf($conn, $PdfName, $owner, $description, $Falculty, $file, $Tags, $level){
 
     
-    $fileName =  $file['name'];
-   $fileTmpName =  $file['tmp_name'];
-   $fileSize =  $file['size'];
-   $fileError =  $file['error'];
-   $fileType =  $file['type'];
+//     $fileName =  $file['name'];
+//    $fileTmpName =  $file['tmp_name'];
+//    $fileSize =  $file['size'];
+//    $fileError =  $file['error'];
+//    $fileType =  $file['type'];
 
-   $fileExt = explode('.', $fileName);
-   $fileActualExt = strtolower(end($fileExt));
+//    $fileExt = explode('.', $fileName);
+//    $fileActualExt = strtolower(end($fileExt));
 
-   $allowed = array('pdf');
-   $fileNameNew = "";
+//    $allowed = array('pdf');
+//    $fileNameNew = "";
 
 
-    if (in_array($fileActualExt, $allowed)) {
-    if ($fileError === 0) {
-        if ($fileSize < 10000000) {
-            $PdfId = uniqid("Sancta__".$PdfName, true);
-          $fileNameNew = $PdfId.".".$fileActualExt;
-          $fileDestination = "../../uploads/pdfs/".$fileNameNew;
+//     if (in_array($fileActualExt, $allowed)) {
+//     if ($fileError === 0) {
+//         if ($fileSize < 10000000) {
+//             $PdfId = uniqid("Sancta__".$PdfName, true);
+//           $fileNameNew = $PdfId.".".$fileActualExt;
+//           $fileDestination = "../../uploads/pdfs/".$fileNameNew;
 
-          $sql = "INSERT INTO pdfs(FileId, filesName, Descriptions, Falculty, Tags,  Copyright, FileDirec) VALUES (?, ?, ?, ?, ?, ?, ?);";
+//           $sql = "INSERT INTO pdfs(FileId, filesName, Descriptions, Falculty, Tags,  Copyright, FileDirec) VALUES (?, ?, ?, ?, ?, ?, ?);";
           
-        $stmt = mysqli_stmt_init($conn);
-        if (!mysqli_stmt_prepare($stmt, $sql)) {
-            header("location:../admin/index.php?error=stmtfailed");
-            exit();
-        }
-         mysqli_stmt_bind_param($stmt, "sssssss", $PdfId, $PdfName, $description, $Falculty, $Tags, $owner, $fileNameNew);
-         mysqli_stmt_execute($stmt);
-        mysqli_stmt_close($stmt);
+//         $stmt = mysqli_stmt_init($conn);
+//         if (!mysqli_stmt_prepare($stmt, $sql)) {
+//             header("location:../admin/index.php?error=stmtfailed");
+//             exit();
+//         }
+//          mysqli_stmt_bind_param($stmt, "sssssss", $PdfId, $PdfName, $description, $Falculty, $Tags, $owner, $fileNameNew);
+//          mysqli_stmt_execute($stmt);
+//         mysqli_stmt_close($stmt);
 
     
-          move_uploaded_file($fileTmpName, $fileDestination);
+//           move_uploaded_file($fileTmpName, $fileDestination);
 
-            return true;
+//             return true;
 
-        }
-        else {
-          header("location:../?filetobig");
-          exit();
-        }
-    }
+//         }
+//         else {
+//           header("location:../?filetobig");
+//           exit();
+//         }
+//     }
 
-    else {
-      header("location:../?fileerror");
-          exit();
+//     else {
+//       header("location:../?fileerror");
+//           exit();
 
-    }
-  }
-  else {
-    header("location:../?fileerror=wrongfiletype");
-          exit();
+//     }
+//   }
+//   else {
+//     header("location:../?fileerror=wrongfiletype");
+//           exit();
 
-  }
-}
+//   }
+// }
 
-function unnpdf($conn, $PdfName, $owner, $description, $Falculty, $file, $Tags, $level){
+function uploadPdf($conn, $PdfName, $owner, $description, $Falculty, $file, $Tags, $level){
 
     
   $fileName =  $file['name'];
@@ -92,7 +92,7 @@ function unnpdf($conn, $PdfName, $owner, $description, $Falculty, $file, $Tags, 
         $fileNameNew = $PdfId.".".$fileActualExt;
         $fileDestination = "../../uploads/pdfs/".$fileNameNew;
 
-        $sql = "INSERT INTO unnpdfs(FileId, filesName, Descriptions, Falculty, Tags,  Copyright, FileDirec, levels) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
+        $sql = "INSERT INTO pdfs(FileId, filesName, Descriptions, Falculty, Tags,  Copyright, FileDirec, levels) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
         
       $stmt = mysqli_stmt_init($conn);
       if (!mysqli_stmt_prepare($stmt, $sql)) {

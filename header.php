@@ -22,7 +22,7 @@
   <meta name="description" content="">
   <meta name="keywords" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <script src="scripts/jquery-3.6.0.min.js"></script>
   <title>
     MEME_WORLD--<?php
           if (isset($_GET['fileId'])) {
@@ -143,8 +143,8 @@
   </header>
   <main class="">
   <div class="form-wrapper">
-    <form action="search.php">
-    <input  placeholder="type subject here..." type="text">
+    <form action="<?php echo $solve_url; ?>search.php">
+    <input  placeholder="type subject here..." type="search" name="sw">
     <button class="search-icon-wrapper">
       <div class="search-icon">
       <svg xmlns="http://www.w3.org/2000/svg" width="22.607" height="22.608" viewBox="0 0 22.607 22.608"><defs><style>.a{fill:#fff;}</style></defs><path class="a" d="M20.681,22.608,12.9,14.827A8.168,8.168,0,0,1,2.393,2.394,8.168,8.168,0,0,1,14.827,12.9l7.78,7.781-1.925,1.925ZM8.164,2.724A5.445,5.445,0,0,0,6,13.164,5.443,5.443,0,0,0,12.619,11.3a5.466,5.466,0,0,0-.481-6.858l.825.817-.929-.926-.017-.016a5.444,5.444,0,0,0-3.836-1.6H8.164Z" transform="translate(0 0)"/></svg>

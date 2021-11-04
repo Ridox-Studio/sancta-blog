@@ -52,30 +52,29 @@
     $description = $_POST['description'];
 
     $file = $_FILES['file'];
-
-    switch ($_POST['uploadpdf']) {
-        case 'level':
-            $level = $_POST['level'];
+    $level = $_POST['level'];
+    
+    switch ($_POST['level']) {
+        case '000':
+            
             # code...
-            if (unnpdf($conn, $PdfName, $owner, $description, $Falculty, $file, $Tags, $level) !== false) {
+            $Falculty = "P-UTME";
+            if (uploadPdf($conn, $PdfName, $owner, $description, $Falculty, $file, $Tags, $level) !== false) {
                 # code...
                 header("Location:../?error=uploadsucess");
                 exit();
             }
             break;
-            case 'Upload':
-
-                # code...
-                if (uploadPdf($conn, $PdfName, $owner, $description, $Falculty, $file, $Tags) !== false) {
-                    # code...
-                    header("Location:../?error=uploadsucess");
-                    exit();
-                }
-                break;
-        
-        default:
+            default :
             # code...
+            if (uploadPdf($conn, $PdfName, $owner, $description, $Falculty, $file, $Tags, $level) !== false) {
+                # code...
+                header("Location:../?error=uploadsucess");
+                exit();
+            }
             break;
+        
+        
     }
 
     

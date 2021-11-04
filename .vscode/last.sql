@@ -4,6 +4,7 @@ CREATE TABLE Pdfs (
     filesName varchar(123) NOT NULL,
     Descriptions varchar(255) NOT NULL,
     Falculty varchar(255) NOT NULL,
+    levels varchar(255) NOT NULL,
     Tags varchar(700) NOT NULL,
     Copyright varchar(700) NOT NULL,
     FileDirec varchar(700) NOT NULL,

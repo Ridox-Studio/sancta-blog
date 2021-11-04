@@ -3,14 +3,19 @@
 
   include_once "header.php"; 
   ?> 
+  <div class="search_result_type">
+    <button class="pdf_button">pdf</button>
+    <button class="news_button">news</button>
+  </div>
 <div class="search_query_load">
 
 
    <?php
   if (isset($_GET['sw'])) {
       # code...
+      // echo $_GET['sw'];
       $searchword = $_GET['sw'];
-      $sql = "SELECT * FROM pdfs WHERE Falculty LIKE '%$searchword%' OR ;";
+      $sql = "SELECT * FROM pdfs WHERE Falculty LIKE '%$searchword%' OR Descriptions LIKE '%$searchword%' OR filesName LIKE '%$searchword%'  OR Tags LIKE '%$searchword%';";
   }
   else {
       $sql = "SELECT * FROM pdfs ;";
@@ -58,6 +63,30 @@
 ?>
 </div>
 </div>
+<script>
+
+        $(document).ready(function() {
+            var searchcount = 10;
+            let keyword = "<?php echo $searchword; ?>";
+            $(".pdf_button").click(function() {
+                // searchcount = searchcount + 7;
+                let searchpdf = "pdf";
+                // searchpdf = "pdf";
+                $(".search_query_load").load("incs/search.inc.php", {
+                    searchpdf: searchpdf,
+                    keyword: keyword
+                });
+            });
+            $(".news_button").click(function() {
+                let searchnews = "news";
+                // searchcount = searchcount + 7;
+                $(".search_query_load").load("incs/search.inc.php", {
+                    searchnews: searchnews,
+                    keyword: keyword
+                });
+            });
+        });
+    </script>
             
   <?php       
  include_once "footer.php";

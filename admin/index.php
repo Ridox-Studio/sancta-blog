@@ -8,7 +8,7 @@
 </head>
 <body>
 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit aut animi, doloremque assumenda saepe voluptatem provident odit perspiciatis amet illum minima debitis nulla, alias doloribus. Nulla, repudiandae, voluptatem nesciunt eaque tempore ducimus cupiditate dicta fugit modi blanditiis quidem aspernatur, recusandae totam molestias. Harum ipsa, ullam facere ad, delectus quibusdam praesentium veritatis, sit consequuntur provident hic dolor unde optio amet?
-    <form action="incs/uploadpdf.inc.php" method="post" enctype="multipart/form-data">
+    <!-- <form action="incs/uploadpdf.inc.php" method="post" enctype="multipart/form-data">
 
         <label for="songname">File Name:</label>
         <input type="text" name="PdfName">
@@ -41,7 +41,7 @@ Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit aut animi, dolor
         
         <button name="uploadpdf" value="Upload">Upload PDF</button>
 
-    </form>
+    </form> -->
     <br>
     <br>
     
@@ -70,6 +70,9 @@ Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit aut animi, dolor
         </select>
 
         <select name="level" id="">
+            <option value="000">
+                PAST QUESTION
+            </option>
             <option value="100">
                 100
             </option>

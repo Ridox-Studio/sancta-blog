@@ -330,6 +330,8 @@ header nav li {
     align-items: center;
 }
 
+.categories-items-wrapper{
+}
 .categories-item{
     display: flex;
     justify-content: center;
