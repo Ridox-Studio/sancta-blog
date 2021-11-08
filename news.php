@@ -53,9 +53,9 @@
       <div>
       <div class="news-article-description-title">
             <h1>'.$row['Title'].'</h1>
-            <p>'.$date.'</p>
+            <p >'.$date.'</p>
           </div>
-          <p>'.$row['Description'].'.</p>
+          <p class="news-article-description-paragraph">'.$row['Description'].'.</p>
         </div>
     </div>';
 

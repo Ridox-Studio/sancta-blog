@@ -145,7 +145,7 @@
       <ul>
         <li><a href="<?php echo $solve_url; ?>index.php">HOME</a></li>
       
-        <li><a href="<?php echo $solve_url; ?>pdf.php">PASS QUESTION</a></li>
+        <li><a href="<?php echo $solve_url; ?>pdf.php">NEWS</a></li>
         <li><a href="<?php echo $solve_url; ?>pdf.php">SCHOOL PDF</a></li>
         <li><a href="<?php echo $solve_url; ?>contact.php">CONTACTS</a></li>
       </ul>

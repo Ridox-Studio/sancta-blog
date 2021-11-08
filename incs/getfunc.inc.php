@@ -27,10 +27,12 @@
         
           # code...;
           $plusone = $resultData['pageload'] + 1;
-          // echo $resultData['pageload'];2
+          echo $resultData['pageload'];
     
-          $sql = "UPDATE admin SET pageload = '".$plusone."';";
+          $sql = "UPDATE admin SET pageload = ".$plusone.";";
           $result = mysqli_query($conn, $sql);
+          echo $resultData['pageload'];
+
           // exit();
         
       
