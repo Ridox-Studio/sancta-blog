@@ -13,6 +13,10 @@
         height: 80%;
         margin-top: 30px;
     }
+    .hero-section .hot-topic .hot-article {
+        width: 100%;
+        height: 100%;
+    }
     .hero-section .hot-topic .hot-article img {
         position: absolute;
         /* right: -20px; */
@@ -123,6 +127,7 @@ nav ul{
 .news-article{
     display: grid;
     place-items: center;
+    margin-bottom: 106px;
 }
 
 .news-article-image{
@@ -157,7 +162,7 @@ nav ul{
 .news-article-description h1{
     font-size: var(--xxl-fs);
     overflow: hidden;
-    line-height: 57px;
+    /* line-height: 57px; */
 }
 .news-article-description{
     width: 80%;

@@ -102,7 +102,10 @@
       </div>
       <div class="section-title">
       </div>
-      
+      <?php
+        include_once "recent-posts.php";  
+        include_once "footer.php";  
+      ?>
   </main>
     <!-- <script>
       var ctx = document.getElementById('myChart').getContext('2d');
@@ -141,10 +144,7 @@
         }
       });
       </script> -->
-      <?php
-        include_once "recent-posts.php";  
-        include_once "footer.php";  
-      ?>
+      
 </body>
 <script>
   var newsboards = document.querySelectorAll('.news-boards');

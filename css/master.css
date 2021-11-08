@@ -29,6 +29,8 @@ html, body, header, main, section, footer{
     width: 100vw;
     position: relative;
 }
+
+
 body{
     z-index: 1000000;
 }
@@ -37,7 +39,7 @@ body{
 main {
     z-index: -10;
     min-height:100vh;    
-    top: 85px;
+    top: 202px;
 }
 .whatsapp-group-link a {
     height: 20px;
@@ -169,8 +171,7 @@ header nav li {
 
 
 .hero-section .hot-topic .hot-article{
-    width:100%;
-    height: 100%;
+    
     text-align: center;
     position: relative;
     display: flex;
@@ -347,10 +348,12 @@ header nav li {
 /* News Section */
 
 .news-section{
-    top:85px;
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: space-between;
+    overflow: hidden;
+    /* top: 186px; */
 }
 
 .news-section .section-title{
@@ -359,7 +362,7 @@ header nav li {
 .news-section .section-body{
     height:80%;
     width:100%;
-    margin-top: 73px;    
+    margin-top: 95px;    
 }
 
 .news-section .section-body .news-carousel{
@@ -465,6 +468,10 @@ header nav li {
     justify-content: center;
     align-items: center;
     height: 80px;
+    background-color: white;
+    position: fixed;
+    z-index: 10000;
+    top: 82px;
 }
 
 
@@ -476,6 +483,23 @@ form{
 .search-icon{
     right: 0;
     top: 0;
+}
+
+.search_result_type{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    top: 161px;
+    position: fixed;
+    z-index: 100000;
+}
+
+
+.search_result_type button{
+    width: 100%;
+    background: white;
+    border: solid 1px var(--xs-color);
+    padding: 10px;
 }
 
 .form-wrapper button{
@@ -563,7 +587,7 @@ footer{
     background: var(--first-color-alt);
     width: 100%;
     height: 60vh;
-    top: 250px;
+    /* top: 250px; */
 }
 
 .footer-wrapper{

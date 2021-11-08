@@ -1,12 +1,12 @@
 <?php
-
-
   include_once "header.php"; 
-  ?> 
-  <div class="search_result_type">
-    <button class="pdf_button">pdf</button>
-    <button class="news_button">news</button>
-  </div>
+?> 
+
+<div  class="search_result_type">
+    <button  id="btn" class="pdf_button">pdf</button>
+      <button id="hi" class="news_button">news</button>
+    </div>
+
 <div class="search_query_load">
 
 
@@ -63,7 +63,13 @@
 ?>
 </div>
 </div>
+<?php       
+ include_once "footer.php";
+?>
+<script src="search.js"></script>
 <script>
+
+        
 
         $(document).ready(function() {
             var searchcount = 10;
@@ -88,6 +94,4 @@
         });
     </script>
             
-  <?php       
- include_once "footer.php";
-?>
+ 

@@ -39,6 +39,8 @@
 
         
 ?>
+<div style="news-article-image">
+<img src="" alt="picture"></div>
 <section class="news-article">
 <?php 
       $date = date("d F Y", strtotime($row['dateup']));
@@ -46,6 +48,7 @@
         echo ' <div class="news-article-image">
         <img src="../../img/'.$row['Img1'].'" alt="">
     </div>
+    
     <div class="news-article-description">
       <div>
       <div class="news-article-description-title">
