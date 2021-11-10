@@ -146,7 +146,7 @@
       </script> -->
       
 </body>
-<script>
+<!-- <script>
   var newsboards = document.querySelectorAll('.news-boards');
   let lftbtn = document.querySelector('.leftbtn-news');
   let rthbtn = document.querySelector('.rightbtn-news');
@@ -226,7 +226,7 @@ classs.forEach(element => {
 
    
 });
-  </script>
+  </script> -->
 <script src="scripts/main.js"></script>
 <script src="js/swiper-bundle.min.js"></script>
 </html>

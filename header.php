@@ -1,5 +1,25 @@
 <?php
   require "incs/getfunc.inc.php";
+  function plusOne($conn){
+        $countsql = "SELECT pageload FROM admin;";
+      // $sql = "SELECT * FROM news LIMIT 19;";
+      $resultcount = mysqli_query($conn, $countsql);
+      // $resultData = mysqli_fetch_assoc($resultcount);
+      $resultData = mysqli_fetch_assoc($resultcount);
+      
+        
+          # code...;
+          $plusone = $resultData['pageload'] + 1;
+        //   echo $resultData['pageload'];
+    
+          $sql = "UPDATE admin SET pageload = $plusone;";
+          $result = mysqli_query($conn, $sql);
+          // echo "<script> console.log('".$resultData['pageload']." and ".$plusone."');</script>";
+
+          // exit();
+        
+      
+    }
   plusOne($conn);
 
   if (!solve_url()) {
@@ -83,13 +103,14 @@
   <link rel="stylesheet" href="<?php echo $solve_url; ?>css/lgscreen.css">
   <link rel="stylesheet" href="<?php echo $solve_url; ?>css/swiper-bundle.min.css">
   <link rel="apple-touch-icon" href="favicon.png">
-  <link rel='stylesheet' href="<?php echo $solve_url; ?>css/animate/animate.min.css">
+  <!-- <link rel='stylesheet' href="<?php echo $solve_url; ?>css/animate/animate.min.css"> -->
+  <script src="<?php echo $solve_url; ?>scripts/jquery-3.6.0.min.js"></script>
 
 
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 
-<body onloadstart="console.log('hi')">
+<body >
   <div class="whatsapp-group-link">
     <a href="#">
       <p>whatsapp group link: +234 7066 599 5937</p>
@@ -97,13 +118,45 @@
   </div>
   <div class="form-wrapper">
     <form action="<?php echo $solve_url; ?>search.php">
-    <input  placeholder="type news/subject here..." type="search" name="sw">
+    <input  placeholder="type news/subject here..." type="search" name="sw" id="search_input" <?php if (isset($_GET['sw'])) {
+      # code...
+      echo "value='".$_GET['sw']."'";
+    }?>>
     <button class="search-icon-wrapper">
       <div class="search-icon">
       <svg xmlns="http://www.w3.org/2000/svg" width="22.607" height="22.608" viewBox="0 0 22.607 22.608"><defs><style>.a{fill:#fff;}</style></defs><path class="a" d="M20.681,22.608,12.9,14.827A8.168,8.168,0,0,1,2.393,2.394,8.168,8.168,0,0,1,14.827,12.9l7.78,7.781-1.925,1.925ZM8.164,2.724A5.445,5.445,0,0,0,6,13.164,5.443,5.443,0,0,0,12.619,11.3a5.466,5.466,0,0,0-.481-6.858l.825.817-.929-.926-.017-.016a5.444,5.444,0,0,0-3.836-1.6H8.164Z" transform="translate(0 0)"/></svg>
       </div>
       </button>
     </form>
+    <script>
+      $(document).ready(function() {
+            var searchcount = 10;
+            let search = document.querySelector("#search_input");
+            search.addEventListener("input", function(){
+              let searchword = search.value;
+              // console.log(searchword);
+              $(".search_preview_load").load("<?php echo $solve_url; ?>incs/search.inc.php", {
+                searchword: searchword
+            //         keyword: keyword
+            //     });
+            });
+            // $(".search_input").click(function() {
+            //     // searchcount = searchcount + 7;
+            //     let searchpdf = "pdf";
+            //     // searchpdf = "pdf";
+            //     $(".search_query_load").load("incs/search.inc.php", {
+            //         searchpdf: searchpdf,
+            //         keyword: keyword
+            //     });
+            // });
+            
+            });
+            });
+        
+    </script>
+    <div class="search_preview_load" style="position:fixed;display:flex;flex-direction:column;justify-content:center;top:160px;width:100%;height:max-content;background:white;">
+     
+    </div>
     </div>
   <header class="">
     <div class="header-logo">
@@ -145,7 +198,7 @@
       <ul>
         <li><a href="<?php echo $solve_url; ?>index.php">HOME</a></li>
       
-        <li><a href="<?php echo $solve_url; ?>pdf.php">PASS QUESTION</a></li>
+        <li><a href="<?php echo $solve_url; ?>pdf.php">NEWS</a></li>
         <li><a href="<?php echo $solve_url; ?>pdf.php">SCHOOL PDF</a></li>
         <li><a href="<?php echo $solve_url; ?>contact.php">CONTACTS</a></li>
       </ul>

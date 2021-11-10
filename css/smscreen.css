@@ -147,7 +147,7 @@ nav ul{
 
 
 .news-article-description-title{
-    padding: 20px 0 20px 0;
+    padding: 20px 0 54px 0;
     width: 100%;
 }
 
@@ -157,6 +157,11 @@ nav ul{
     font-size: var(--xs-fs);
     text-transform: uppercase;
     margin-top: 10px;
+}
+
+.news-article-description .news-article-description-paragraph{
+    line-height: 35px;
+    font-size: calc(var(--s-fs) + 5px);
 }
 
 .news-article-description h1{
@@ -173,6 +178,10 @@ nav ul{
 }
 
 @media (max-width: 360px) {
+    
+    main{
+        top: 138px;
+    }
     .categories{
         height: 100%;
     }
@@ -182,7 +191,6 @@ nav ul{
         position:static;
     }
     .categories{
-        height: 100%;
         padding: 20px;
     }
     .categories-items-wrapper{
@@ -195,10 +203,4 @@ nav ul{
     .categories-item{
         width: 100%;
     }
-}
-@media (max-width: 360px) {
-    
-}
-@media (max-width: 360px) {
-    
 }

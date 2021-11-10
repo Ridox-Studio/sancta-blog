@@ -27,18 +27,18 @@
 //         default:
 //             console.log("Invalid direction");
 //             break;
-
-let swiper = new Swiper(".hero-section", {
-    effect: "coverflow",
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: "auto",
-    loop: true,
-    spaceBetween: 32,
-    coverflowEffect: {
-        rotate: 0,
-    },
-})
+// ic ommented this 
+// let swiper = new Swiper(".hero-section", {
+//     effect: "coverflow",
+//     grabCursor: true,
+//     centeredSlides: true,
+//     slidesPerView: "auto",
+//     loop: true,
+//     spaceBetween: 32,
+//     coverflowEffect: {
+//         rotate: 0,
+//     },
+// })
 
 //     if (position < noof && position >= -noof / 2) {
 //         newsboards.forEach(element => {

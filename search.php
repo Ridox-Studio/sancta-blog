@@ -59,6 +59,10 @@
             }
             else {
                 echo '<div class="">No Pdf Here</div>';
+                echo '<script>window.addEventListener("load", function(){
+                  document.querySelector(".news_button").click();
+                });</script>';
+
             }
 ?>
 </div>

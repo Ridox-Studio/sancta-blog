@@ -17,21 +17,4 @@
     require "redirect.inc.php";
 
 
-    function plusOne($conn){
-        $countsql = "SELECT pageload FROM admin;";
-      // $sql = "SELECT * FROM news LIMIT 19;";
-      $resultcount = mysqli_query($conn, $countsql);
-      // $resultData = mysqli_fetch_assoc($resultcount);
-      $resultData = mysqli_fetch_assoc($resultcount);
-      
-        
-          # code...;
-          $plusone = $resultData['pageload'] + 1;
-          // echo $resultData['pageload'];2
     
-          $sql = "UPDATE admin SET pageload = '".$plusone."';";
-          $result = mysqli_query($conn, $sql);
-          // exit();
-        
-      
-    }

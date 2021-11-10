@@ -1,12 +1,97 @@
-@media (min-width: 900px) {
+@media (min-width: 700px) {
+    main{
+        top: 160px;
+    }
+    .topic-header{
+        top: 0px;
+    }
+    .img-wrapper {
+        overflow: hidden;
+        padding: 20px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        border-radius: 39px;
+        width: 100%;
+        height: 100%;
+    }
+    .overlay-image-1 {
+        z-index: -2;
+        position: absolute;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--first-color-overlay);
+    }
+    .hero-section{
+        height: 435px;
+    }
+    .hero-section .article-topic{
+        padding-top: 41px;
+    }
+    .hero-section .article-topic {
+        padding-top: 0px;
+        min-width: 85%;
+        height: 80%;
+        margin-top: 56px;
+    }
+    .hot-article{
+        height: 100%;
+    }
     .hot-article .img-wrapper {
         position: relative;
         border: yellow solid;
+        height: 100%;
+        overflow: hidden;
+        width: 80%;
     }
-    .article{
+    .hot-article .img-wrapper img{
+        width: 100%;
         position: absolute;
         top: 0;
-        width: 80%
+        left: 0;
     }
+    .categories{
+        height: 100%;
+    }
+    .article{
+        z-index: 1;
+    }
+    .catergories-section{
+        margin-top: 100px;
+    }
+    .news-section .section-body .news-carousel .news-boards{
+        max-width: 800px;
+        min-width: 0px;
+        max-width: none;
+    }
+    .news-article-description{
+        width: 70%;
+    }
+    .news-article-description{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .news-article{
+        display: grid;
+        place-items: center;
+        margin-bottom: 100px;
+    }
+    .news-article-description-title{
+        margin-bottom: 30px;
     
+    }
+    .news-article-description-title p{
+        font-size: calc(var(--xs-fs) + 3px);
+    }
+    .news-article-description h1{
+        font-size: calc(var(--xxl-fs) + 0.5rem);
+        overflow: hidden;
+    }
+    .news-article-description-paragraph{
+        line-height: 44px;
+        font-size: calc(var(--s-fs) + 5px);
+    }
 }
