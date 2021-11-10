@@ -39,14 +39,14 @@
 
         
 ?>
-<div style="news-article-image">
-<img src="" alt="picture"></div>
-<section class="news-article">
+
 <?php 
       $date = date("d F Y", strtotime($row['dateup']));
-
+        echo '<div style="news-article-image">
+        <img src="../../uploads/image/'.$row['Img1'].'" alt="'.$row['Title'].'"></div>
+        <section class="news-article">';
         echo ' <div class="news-article-image">
-        <img src="../../img/'.$row['Img1'].'" alt="">
+        
     </div>
     
     <div class="news-article-description">

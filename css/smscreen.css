@@ -178,6 +178,10 @@ nav ul{
 }
 
 @media (max-width: 360px) {
+    
+    main{
+        top: 138px;
+    }
     .categories{
         height: 100%;
     }
@@ -187,7 +191,6 @@ nav ul{
         position:static;
     }
     .categories{
-        height: 100%;
         padding: 20px;
     }
     .categories-items-wrapper{
@@ -200,10 +203,4 @@ nav ul{
     .categories-item{
         width: 100%;
     }
-}
-@media (max-width: 360px) {
-    
-}
-@media (max-width: 360px) {
-    
 }

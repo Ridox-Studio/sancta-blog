@@ -1,9 +1,40 @@
 @media (min-width: 700px) {
+    main{
+        top: 160px;
+    }
     .topic-header{
         top: 0px;
     }
+    .img-wrapper {
+        overflow: hidden;
+        padding: 20px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        border-radius: 39px;
+        width: 100%;
+        height: 100%;
+    }
+    .overlay-image-1 {
+        z-index: -2;
+        position: absolute;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--first-color-overlay);
+    }
+    .hero-section{
+        height: 435px;
+    }
     .hero-section .article-topic{
-        padding-top: 40px;
+        padding-top: 41px;
+    }
+    .hero-section .article-topic {
+        padding-top: 0px;
+        min-width: 85%;
+        height: 80%;
+        margin-top: 56px;
     }
     .hot-article{
         height: 100%;
@@ -21,13 +52,19 @@
         top: 0;
         left: 0;
     }
+    .categories{
+        height: 100%;
+    }
     .article{
-        position: absolute;
-        top: 0;
-        width: 80%
+        z-index: 1;
+    }
+    .catergories-section{
+        margin-top: 100px;
     }
     .news-section .section-body .news-carousel .news-boards{
-        width: 80%;
+        max-width: 800px;
+        min-width: 0px;
+        max-width: none;
     }
     .news-article-description{
         width: 70%;

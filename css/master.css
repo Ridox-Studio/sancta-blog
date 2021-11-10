@@ -39,7 +39,7 @@ body{
 main {
     z-index: -10;
     min-height:100vh;    
-    top: 202px;
+    top: 139px;
 }
 .whatsapp-group-link a {
     height: 20px;
@@ -378,8 +378,10 @@ header nav li {
 }
 
 .news-section .section-body .news-carousel .news-boards {
+    justify-content: flex-end;
     overflow: hidden;
     flex-basis: 40%;
+    padding: 20px;
     min-width: 320px;
     max-width: 350px;
     width: 65%;
@@ -441,6 +443,7 @@ header nav li {
     z-index: 0;
     position: absolute;
     top: 0;
+    left: 0;
     min-width: 100%;
     min-height: 100%;
     background-color: var(--first-color-overlay);
@@ -448,7 +451,8 @@ header nav li {
 
 .news-boards .news-headline{
     flex-basis:20%;
-    position: absolute;
+    z-index: 1;
+    width: 100%;
     border-radius: 20px;
     display:flex;
     border: white;
@@ -461,7 +465,6 @@ header nav li {
     background: var(--main-white);
     height: 47%;
     box-sizing: border-box;
-    max-width: 280px;
     bottom: 20px;
 }
 
@@ -619,7 +622,7 @@ footer{
     background: var(--first-color-alt);
     width: 100%;
     height: 60vh;
-    /* top: 250px; */
+    top: 250px;
 }
 
 .footer-wrapper{
@@ -682,4 +685,14 @@ footer{
     font-size: var(--xs-fs);
     color: var(--xs-color);
     flex-direction: column;
+}
+/* to style search dropdown */
+.search_dropdown{
+    width: 100%;
+    max-width:500px ;
+    /* height: 30px; */
+    padding:10px 0px;
+    display: flex;
+    align-items: center;
+    border-bottom: solid 2px var(--first-color-overlay);
 }
